@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "383dd41a-cffa-4800-b5c5-ae2140b13290",
+		"name": "movies-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25046269"
+	},
+	"item": [
+		{
+			"name": "Get  a single random movie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1/movies?genres%5B%5D=Sci-Fi&genres%5B%5D=Drama&genres%5B%5D=Comedy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "genres%5B%5D",
+							"value": "Sci-Fi"
+						},
+						{
+							"key": "genres%5B%5D",
+							"value": "Drama"
+						},
+						{
+							"key": "genres%5B%5D",
+							"value": "Comedy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single random movie in runtime range",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1/movies?duration=150",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "duration",
+							"value": "150"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all movies matching genres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1/movies?genres=Thriller&genres=Horror",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "genres",
+							"value": "Thriller"
+						},
+						{
+							"key": "genres",
+							"value": "Horror"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all movies matching genres and narrowed by runtime",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1/movies?genres=Thriller&genres=Horror&duration=120",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "genres",
+							"value": "Thriller"
+						},
+						{
+							"key": "genres",
+							"value": "Horror"
+						},
+						{
+							"key": "duration",
+							"value": "120"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"genres\": [\"Action\", \"Adventure\", \"Sci-Fi\"],\r\n    \"title\": \"Mad Max: Fury Road\",\r\n    \"year\": 2015,\r\n    \"runtime\": 120,\r\n    \"director\": \"George Miller\",\r\n    \"actors\": \"Tom Hardy, Charlize Theron, Nicholas Hoult, Hugh Keays-Byrne\",\r\n    \"plot\": \"In a post-apocalyptic wasteland, Max teams up with Furiosa to flee from a warlord and his army in a high-speed, deadly chase through the desert.\",\r\n    \"posterUrl\": \"https://example.com/madmaxfuryroad.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/movies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

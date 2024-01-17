@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": [
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "eslint:recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/ban-types": "off",
+    "prettier/prettier": 2,
+    "no-console": 1
+  }
+}
